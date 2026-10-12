@@ -1,0 +1,37 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environments and package caches
+.venv/
+venv/
+env/
+.conda/
+.cache/
+
+# Model weights and downloaded datasets
+models/
+checkpoints/
+datasets/
+*.bin
+*.pt
+*.pth
+*.safetensors
+
+# Local experiment output
+logs/
+*.log
+nohup.out
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*~
+
+# Local secrets
+.env
+.env.*
+!.env.example

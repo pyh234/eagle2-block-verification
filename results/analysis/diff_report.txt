@@ -1,0 +1,117 @@
+======================================================================
+EAGLE-2 vs Vanilla greedy output divergence report
+  ea-file   : /root/autodl-tmp/results/qwen2_eagle2_t0.0_20260608_140503.jsonl
+  base-file : /root/autodl-tmp/results/qwen2_vanilla_t0.0_20260608_133513.jsonl
+  tokenizer : /root/autodl-tmp/models/Qwen2-7B-Instruct
+  aligned questions: 80
+======================================================================
+
+---- Summary (all turns) ----
+total turns            : 160
+identical turns        : 29 (18.1%)
+diverged turns         : 131 (81.9%)
+first-diverge pos k    : mean=72.6  median=40  min=0  max=414
+common-prefix fraction : mean=0.247  median=0.133
+
+---- Summary (turn0 only) ----
+  (turn0 starts from the IDENTICAL prompt -> the clean lossless test)
+total turns            : 80
+identical turns        : 20 (25.0%)
+diverged turns         : 60 (75.0%)
+first-diverge pos k    : mean=107.0  median=75  min=1  max=414
+common-prefix fraction : mean=0.326  median=0.232
+
+---- Summary (turn1 only) ----
+  (turn1 inherits turn0's (already diverged) answer as context -> contaminated)
+total turns            : 80
+identical turns        : 9 (11.2%)
+diverged turns         : 71 (88.8%)
+first-diverge pos k    : mean=43.6  median=24  min=0  max=269
+common-prefix fraction : mean=0.181  median=0.085
+
+---- First-divergence position (fraction of common length) ----
+     [0.0,0.1) :  56 ########################################################
+    [0.1,0.25) :  28 ############################
+    [0.25,0.5) :  22 ######################
+    [0.5,0.75) :  17 #################
+    [0.75,0.9) :   4 ####
+     [0.9,1.0] :   4 ####
+
+---- turn0 earliest-divergence examples (candidates for 9.3 logits probe) ----
+(both sides share the SAME prompt; context = shared prefix right before the fork)
+
+q140 turn0  k=1  frac=0.003  (ea_len=630, base_len=389)
+    prefix : ...'To'
+    EAGLE  -> ' solve'
+    vanilla-> ' extract'
+
+q89 turn0  k=3  frac=0.032  (ea_len=252, base_len=94)
+    prefix : ...'1. "'
+    EAGLE  -> 'Green'
+    vanilla-> 'In'
+
+q143 turn0  k=4  frac=0.007  (ea_len=615, base_len=638)
+    prefix : ...'Photosynthesis is a'
+    EAGLE  -> ' fundamental'
+    vanilla-> ' complex'
+
+q153 turn0  k=4  frac=0.005  (ea_len=829, base_len=755)
+    prefix : ...'Antitrust laws are'
+    EAGLE  -> ' designed'
+    vanilla-> ' legal'
+
+q92 turn0  k=6  frac=0.048  (ea_len=207, base_len=124)
+    prefix : ...'Ah, hand dryers.'
+    EAGLE  -> ' Let'
+    vanilla-> ' They'
+
+q159 turn0  k=8  frac=0.014  (ea_len=587, base_len=619)
+    prefix : ..." business in Japan, it's"
+    EAGLE  -> ' essential'
+    vanilla-> ' important'
+
+q115 turn0  k=17  frac=0.059  (ea_len=290, base_len=299)
+    prefix : ...' bus at the terminal as \\('
+    EAGLE  -> 'x'
+    vanilla-> 'P'
+
+q124 turn0  k=18  frac=0.045  (ea_len=405, base_len=404)
+    prefix : ...' subsequence (LCS)'
+    EAGLE  -> ' between'
+    vanilla-> ' of'
+
+q101 turn0  k=19  frac=0.559  (ea_len=34, base_len=36)
+    prefix : ...' it means you are now in'
+    EAGLE  -> ' second'
+    vanilla-> ' the'
+
+q158 turn0  k=19  frac=0.044  (ea_len=552, base_len=428)
+    prefix : ...' methods to challenge the prevailing thoughts'
+    EAGLE  -> ' and'
+    vanilla-> ' of'
+
+q96 turn0  k=20  frac=0.091  (ea_len=316, base_len=220)
+    prefix : ...' computer understand and generate human-like'
+    EAGLE  -> ' text'
+    vanilla-> ' language'
+
+q109 turn0  k=21  frac=0.086  (ea_len=245, base_len=248)
+    prefix : ...' fell exactly to his right,'
+    EAGLE  -> ' this'
+    vanilla-> ' we'
+
+q108 turn0  k=22  frac=0.537  (ea_len=68, base_len=41)
+    prefix : ...' object to which the other three'
+    EAGLE  -> ' words'
+    vanilla-> ' ('
+
+q85 turn0  k=24  frac=0.133  (ea_len=207, base_len=180)
+    prefix : ...' enigmatic as the shadows that'
+    EAGLE  -> ' dance'
+    vanilla-> ' cloak'
+
+q104 turn0  k=25  frac=0.833  (ea_len=45, base_len=30)
+    prefix : ...' they all share the same brother'
+    EAGLE  -> '.'
+    vanilla-> ','
+

@@ -1,0 +1,30 @@
+==============================================================================
+Block Verification lossiness analysis  (temperature t=0.8, fixed tree)
+  vanilla : /root/autodl-tmp/peiyuhao/results/qwen2_vanilla_t0.8_20260616_102407.jsonl
+  eagle2  : /root/autodl-tmp/peiyuhao/results/qwen2_eagle2_t0.8_20260616_102407.jsonl
+  block   : /root/autodl-tmp/peiyuhao/results/qwen2_eagle2_block_vec_t0.8_20260616_102407.jsonl
+==============================================================================
+
+CAVEAT: at t>0, divergence is dominated by independent RNG streams across
+configs, NOT only distribution shift. Read text metrics as a coarse proxy;
+the accept-length column is the more interpretable lossiness signal.
+
+---- mean accept length (tokens per target forward) ----
+  vanilla AR        : 1.000
+  EAGLE-2           : 3.700
+  Block (vectorized): 4.111
+  accept-length gain (Block - EAGLE-2): +0.411
+
+---- pairwise token-level divergence ----
+  pair                 turns  divrate  meanPfx(tok)  medPfx  meanPfxFrac
+  EAGLE-2 vs vanilla     160    97.5%           4.6       2        0.038
+  Block   vs vanilla     160    97.5%           5.3       3        0.042
+  Block   vs EAGLE-2     160    96.2%           6.9       4        0.058
+
+---- trade-off: distribution shift vs accept-length gain ----
+  Block buys +0.411 accept length over EAGLE-2,
+  at the cost of diverging from EAGLE-2 on 96.2% of turns
+  (mean shared prefix 6.9 tokens before they differ).
+  NOTE: part of that divergence is RNG-stream difference, not pure bias;
+  cross-check with the accept-length proximity to t=0 greedy (4.08).
+

@@ -1,0 +1,29 @@
+ea_file   : /root/autodl-tmp/results/prof_block_vec_t0.5_20260614_010110.jsonl
+base_file : /root/autodl-tmp/results/qwen2_vanilla_t0.5_20260613_145125.jsonl
+tree      : total_token=60 depth=5 top_k=10
+
+[EAGLE-2]
+  turns                 : 160
+  total generated tokens: 55706
+  total wall time (s)   : 701.51
+  mean speed (tokens/s) : 79.86  (per-turn average)
+  overall tokens/s      : 79.41  (sum tokens / sum time)
+  mean accept length    : 4.08  (tokens per target forward)
+  profile prefill ms    : 75.72 avg/turn
+  profile target ms     : 2647.83 avg/turn (60.6%)
+  profile verify ms     : 69.91 avg/turn (1.6%)
+  profile update ms     : 1573.01 avg/turn (36.0%)
+  profile cycles/turn   : 87.33
+
+[Vanilla AR]
+  turns                 : 160
+  total generated tokens: 57776
+  total wall time (s)   : 1477.81
+  mean speed (tokens/s) : 39.46  (per-turn average)
+  overall tokens/s      : 39.10  (sum tokens / sum time)
+  mean accept length    : 1.00  (tokens per target forward)
+
+========================================
+Speedup (per-turn mean) : 2.02x
+Speedup (overall)       : 2.03x
+========================================

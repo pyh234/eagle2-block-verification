@@ -1,0 +1,58 @@
+======================================================================
+9.3 method A: tree-forward vs sequential-forward target logits at fork
+  base : /root/autodl-tmp/models/Qwen2-7B-Instruct
+  ea   : /root/autodl-tmp/models/EAGLE-Qwen2-7B-Instruct
+  dtype: bfloat16   use_eagle3=False   greedy (temperature=0)
+======================================================================
+
+======================================================================
+question 143  (turn0)
+  prompt tokens: 61, ea_gen=83, va_gen=80, first divergence k=4
+  shared prefix tail : ...'Photosynthesis is a'
+  EAGLE   token@k    : 15811 -> ' fundamental'
+  vanilla token@k    : 6351 -> ' complex'
+  [tree forward (EAGLE)] top-5:
+        19.3750  id= 15811  ' fundamental'
+        19.2500  id=  6351  ' complex'
+        18.1250  id=  9023  ' critical'
+        17.5000  id= 16587  ' crucial'
+        17.2500  id=  1882  ' process'
+  [sequential forward (vanilla)] top-5:
+        19.2500  id= 15811  ' fundamental'
+        19.2500  id=  6351  ' complex'
+        18.1250  id=  9023  ' critical'
+        17.5000  id= 16587  ' crucial'
+        17.2500  id=  1882  ' process'
+  ---- contested pair {EAGLE_tok, vanilla_tok} ----
+    tree  logit(ea)=19.3750  logit(van)=19.2500  (ea-van)=+0.12500  -> argmax EAGLE
+    seq   logit(ea)=19.2500  logit(van)=19.2500  (ea-van)=+0.00000  -> argmax vanilla
+    tie size |gap| : tree=0.12500  seq=0.00000
+    cross-path logit drift on the pair: 0.12500
+    max |tree-seq| over full vocab     : 0.15625
+    ==> argmax FLIPPED between paths: True
+
+======================================================================
+question 96  (turn0)
+  prompt tokens: 79, ea_gen=82, va_gen=80, first divergence k=13
+  shared prefix tail : ...' a smart dictionary for computers. It helps'
+  EAGLE   token@k    : 18495 -> ' computers'
+  vanilla token@k    : 279 -> ' the'
+  [tree forward (EAGLE)] top-5:
+        26.0000  id= 18495  ' computers'
+        25.8750  id=   279  ' the'
+        25.6250  id=  1105  ' them'
+        25.2500  id=   264  ' a'
+        25.0000  id= 12645  ' machines'
+  [sequential forward (vanilla)] top-5:
+        26.0000  id=   279  ' the'
+        26.0000  id= 18495  ' computers'
+        25.7500  id=  1105  ' them'
+        25.3750  id=   264  ' a'
+        25.0000  id= 12645  ' machines'
+  ---- contested pair {EAGLE_tok, vanilla_tok} ----
+    tree  logit(ea)=26.0000  logit(van)=25.8750  (ea-van)=+0.12500  -> argmax EAGLE
+    seq   logit(ea)=26.0000  logit(van)=26.0000  (ea-van)=+0.00000  -> argmax vanilla
+    tie size |gap| : tree=0.12500  seq=0.00000
+    cross-path logit drift on the pair: 0.12500
+    max |tree-seq| over full vocab     : 0.15625
+    ==> argmax FLIPPED between paths: True

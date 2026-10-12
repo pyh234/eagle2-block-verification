@@ -1,0 +1,14 @@
+[2026-06-16 10:24:07] ======== Temperature ablation suite t=0.8 (fixed tree) ========
+[2026-06-16 10:24:07] MAX_NEW_TOKEN=1024 TOTAL_TOKEN=60 DEPTH=5 TOP_K=10 TEMP=0.8
+[2026-06-16 10:24:07] RUN Vanilla t=0.8 total_token=60 -> /root/autodl-tmp/results/qwen2_vanilla_t0.8_20260616_102407.jsonl
+[2026-06-16 10:49:14] RUN EAGLE-2 (no block) t=0.8 total_token=60 -> /root/autodl-tmp/results/qwen2_eagle2_t0.8_20260616_102407.jsonl
+[2026-06-16 11:05:00] RUN EAGLE-2+Block(vec) t=0.8 total_token=60 -> /root/autodl-tmp/results/qwen2_eagle2_block_vec_t0.8_20260616_102407.jsonl
+[2026-06-16 11:17:57] SPEED eagle2_t0.8_vs_vanilla -> /root/autodl-tmp/results/speed_eagle2_t0.8_vs_vanilla_20260616_102407.txt
+[2026-06-16 11:17:57] SPEED block_vec_t0.8_vs_vanilla -> /root/autodl-tmp/results/speed_block_vec_t0.8_vs_vanilla_20260616_102407.txt
+[2026-06-16 11:17:57] ======== DONE ========
+[2026-06-16 11:17:57] VAN=/root/autodl-tmp/results/qwen2_vanilla_t0.8_20260616_102407.jsonl
+[2026-06-16 11:17:57] EA=/root/autodl-tmp/results/qwen2_eagle2_t0.8_20260616_102407.jsonl
+[2026-06-16 11:17:57] BLOCK=/root/autodl-tmp/results/qwen2_eagle2_block_vec_t0.8_20260616_102407.jsonl
+[2026-06-16 11:17:57] SPEED_EA=/root/autodl-tmp/results/speed_eagle2_t0.8_vs_vanilla_20260616_102407.txt
+[2026-06-16 11:17:57] SPEED_BLOCK=/root/autodl-tmp/results/speed_block_vec_t0.8_vs_vanilla_20260616_102407.txt
+[2026-06-16 11:17:57] Manifest: /root/autodl-tmp/results/temp08_block_manifest_20260616_102407.txt

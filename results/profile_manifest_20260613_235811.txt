@@ -1,0 +1,12 @@
+[2026-06-13 23:58:11] ======== Block Verification PROFILING suite (fixed tree, --enable-profile) ========
+[2026-06-13 23:58:11] MAX_NEW_TOKEN=1024 TOTAL_TOKEN=60 DEPTH=5 TOP_K=10 TEMP_SAMPLE=0.5
+[2026-06-13 23:58:11] RUN [profile] EAGLE-2 (no block) t=0.5 total_token=60 -> /root/autodl-tmp/results/prof_eagle2_t0.5_20260613_235811.jsonl
+[2026-06-14 00:12:43] RUN [profile] EAGLE-2+Block t=0.5 total_token=60 -> /root/autodl-tmp/results/prof_block_t0.5_20260613_235811.jsonl
+[2026-06-14 00:27:18] ======== DONE ========
+[2026-06-14 00:27:18] PROF_EA=/root/autodl-tmp/results/prof_eagle2_t0.5_20260613_235811.jsonl
+[2026-06-14 00:27:18] PROF_BLOCK=/root/autodl-tmp/results/prof_block_t0.5_20260613_235811.jsonl
+[2026-06-14 00:27:18] Manifest: /root/autodl-tmp/results/profile_manifest_20260613_235811.txt
+[2026-06-14 00:27:18] 
+[2026-06-14 00:27:18] 下一步（手动跑分析，本脚本不调用 speed_qwen2.py）：
+[2026-06-14 00:27:18]   python -m eagle.evaluation.speed_qwen2 --ea-file /root/autodl-tmp/results/prof_eagle2_t0.5_20260613_235811.jsonl --base-file /root/autodl-tmp/results/qwen2_vanilla_t0.5_20260613_145125.jsonl
+[2026-06-14 00:27:18]   python -m eagle.evaluation.speed_qwen2 --ea-file /root/autodl-tmp/results/prof_block_t0.5_20260613_235811.jsonl --base-file /root/autodl-tmp/results/qwen2_vanilla_t0.5_20260613_145125.jsonl

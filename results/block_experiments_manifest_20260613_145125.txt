@@ -1,0 +1,24 @@
+[2026-06-13 14:51:25] ======== Block Verification experiment suite (fixed tree) ========
+[2026-06-13 14:51:25] MAX_NEW_TOKEN=1024 TOTAL_TOKEN=60 DEPTH=5 TOP_K=10 TEMP_SAMPLE=0.5
+[2026-06-13 14:51:25] RUN Vanilla t=0.0 -> /root/autodl-tmp/results/qwen2_vanilla_t0.0_20260613_145125.jsonl
+[2026-06-13 15:15:48] RUN EAGLE-2 (no block) t=0.0 total_token=60 -> /root/autodl-tmp/results/qwen2_eagle2_t0.0_20260613_145125.jsonl
+[2026-06-13 15:28:37] RUN EAGLE-2+Block t=0.0 total_token=60 -> /root/autodl-tmp/results/qwen2_eagle2_block_t0.0_20260613_145125.jsonl
+[2026-06-13 15:41:25] RUN Vanilla t=0.5 -> /root/autodl-tmp/results/qwen2_vanilla_t0.5_20260613_145125.jsonl
+[2026-06-13 16:07:57] RUN EAGLE-2 (no block) t=0.5 total_token=60 -> /root/autodl-tmp/results/qwen2_eagle2_t0.5_20260613_145125.jsonl
+[2026-06-13 16:22:21] RUN EAGLE-2+Block t=0.5 total_token=60 -> /root/autodl-tmp/results/qwen2_eagle2_block_t0.5_20260613_145125.jsonl
+[2026-06-13 16:37:02] SPEED eagle2_t0.0_vs_vanilla -> /root/autodl-tmp/results/speed_eagle2_t0.0_vs_vanilla_20260613_145125.txt
+[2026-06-13 16:37:02] SPEED block_t0.0_vs_vanilla -> /root/autodl-tmp/results/speed_block_t0.0_vs_vanilla_20260613_145125.txt
+[2026-06-13 16:37:02] SPEED eagle2_t0.5_vs_vanilla -> /root/autodl-tmp/results/speed_eagle2_t0.5_vs_vanilla_20260613_145125.txt
+[2026-06-13 16:37:02] SPEED block_t0.5_vs_vanilla -> /root/autodl-tmp/results/speed_block_t0.5_vs_vanilla_20260613_145125.txt
+[2026-06-13 16:37:03] ======== DONE ========
+[2026-06-13 16:37:03] VAN_T0=/root/autodl-tmp/results/qwen2_vanilla_t0.0_20260613_145125.jsonl
+[2026-06-13 16:37:03] EA_T0=/root/autodl-tmp/results/qwen2_eagle2_t0.0_20260613_145125.jsonl
+[2026-06-13 16:37:03] BLOCK_T0=/root/autodl-tmp/results/qwen2_eagle2_block_t0.0_20260613_145125.jsonl
+[2026-06-13 16:37:03] VAN_TS=/root/autodl-tmp/results/qwen2_vanilla_t0.5_20260613_145125.jsonl
+[2026-06-13 16:37:03] EA_TS=/root/autodl-tmp/results/qwen2_eagle2_t0.5_20260613_145125.jsonl
+[2026-06-13 16:37:03] BLOCK_TS=/root/autodl-tmp/results/qwen2_eagle2_block_t0.5_20260613_145125.jsonl
+[2026-06-13 16:37:03] SPEED_EA_T0=/root/autodl-tmp/results/speed_eagle2_t0.0_vs_vanilla_20260613_145125.txt
+[2026-06-13 16:37:03] SPEED_BLOCK_T0=/root/autodl-tmp/results/speed_block_t0.0_vs_vanilla_20260613_145125.txt
+[2026-06-13 16:37:03] SPEED_EA_TS=/root/autodl-tmp/results/speed_eagle2_t0.5_vs_vanilla_20260613_145125.txt
+[2026-06-13 16:37:03] SPEED_BLOCK_TS=/root/autodl-tmp/results/speed_block_t0.5_vs_vanilla_20260613_145125.txt
+[2026-06-13 16:37:03] Manifest: /root/autodl-tmp/results/block_experiments_manifest_20260613_145125.txt

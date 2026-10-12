@@ -1,0 +1,24 @@
+ea_file   : /root/autodl-tmp/results/qwen2_eagle2_block_vec_t0.8_20260616_102407.jsonl
+base_file : /root/autodl-tmp/results/qwen2_vanilla_t0.8_20260616_102407.jsonl
+tree      : total_token=60 depth=5 top_k=10
+
+[EAGLE-2]
+  turns                 : 160
+  total generated tokens: 56160
+  total wall time (s)   : 698.83
+  mean speed (tokens/s) : 80.56  (per-turn average)
+  overall tokens/s      : 80.36  (sum tokens / sum time)
+  mean accept length    : 4.11  (tokens per target forward)
+
+[Vanilla AR]
+  turns                 : 160
+  total generated tokens: 56733
+  total wall time (s)   : 1403.16
+  mean speed (tokens/s) : 40.28  (per-turn average)
+  overall tokens/s      : 40.43  (sum tokens / sum time)
+  mean accept length    : 1.00  (tokens per target forward)
+
+========================================
+Speedup (per-turn mean) : 2.00x
+Speedup (overall)       : 1.99x
+========================================

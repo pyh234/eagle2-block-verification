@@ -1,0 +1,25 @@
+[EAGLE-2]
+  turns                 : 160
+  total generated tokens: 55969
+  total wall time (s)   : 793.27
+  mean speed (tokens/s) : 70.91  (per-turn average)
+  overall tokens/s      : 70.56  (sum tokens / sum time)
+  mean accept length    : 4.10  (tokens per target forward)
+  profile prefill ms    : 77.25 avg/turn
+  profile target ms     : 2806.75 avg/turn (56.9%)
+  profile verify ms     : 404.41 avg/turn (8.2%)
+  profile update ms     : 1646.10 avg/turn (33.4%)
+  profile cycles/turn   : 87.24
+
+[Vanilla AR]
+  turns                 : 160
+  total generated tokens: 57776
+  total wall time (s)   : 1477.81
+  mean speed (tokens/s) : 39.46  (per-turn average)
+  overall tokens/s      : 39.10  (sum tokens / sum time)
+  mean accept length    : 1.00  (tokens per target forward)
+
+========================================
+Speedup (per-turn mean) : 1.80x
+Speedup (overall)       : 1.80x
+========================================

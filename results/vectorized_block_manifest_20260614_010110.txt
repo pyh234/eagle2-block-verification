@@ -1,0 +1,16 @@
+[2026-06-14 01:01:10] ======== Vectorized Block Verification suite (fixed tree) ========
+[2026-06-14 01:01:10] MAX_NEW_TOKEN=1024 TOTAL_TOKEN=60 DEPTH=5 TOP_K=10 TEMP_SAMPLE=0.5 BASE_TS=20260613_145125
+[2026-06-14 01:01:10] RUN vectorized EAGLE-2+Block t=0.0 total_token=60 -> /root/autodl-tmp/results/qwen2_eagle2_block_vec_t0.0_20260614_010110.jsonl
+[2026-06-14 01:14:01] RUN vectorized EAGLE-2+Block t=0.5 total_token=60 -> /root/autodl-tmp/results/qwen2_eagle2_block_vec_t0.5_20260614_010110.jsonl
+[2026-06-14 01:26:44] RUN [profile] vectorized EAGLE-2+Block t=0.5 total_token=60 -> /root/autodl-tmp/results/prof_block_vec_t0.5_20260614_010110.jsonl
+[2026-06-14 01:39:36] SPEED block_vec_t0.0_vs_vanilla -> /root/autodl-tmp/results/speed_block_vec_t0.0_vs_vanilla_20260614_010110.txt
+[2026-06-14 01:39:36] SPEED block_vec_t0.5_vs_vanilla -> /root/autodl-tmp/results/speed_block_vec_t0.5_vs_vanilla_20260614_010110.txt
+[2026-06-14 01:39:37] SPEED prof_block_vec_t0.5_vs_vanilla -> /root/autodl-tmp/results/speed_prof_block_vec_t0.5_vs_vanilla_20260614_010110.txt
+[2026-06-14 01:39:37] ======== DONE ========
+[2026-06-14 01:39:37] BLOCK_T0=/root/autodl-tmp/results/qwen2_eagle2_block_vec_t0.0_20260614_010110.jsonl
+[2026-06-14 01:39:37] BLOCK_TS=/root/autodl-tmp/results/qwen2_eagle2_block_vec_t0.5_20260614_010110.jsonl
+[2026-06-14 01:39:37] PROF_BLOCK_TS=/root/autodl-tmp/results/prof_block_vec_t0.5_20260614_010110.jsonl
+[2026-06-14 01:39:37] SPEED_BLOCK_T0=/root/autodl-tmp/results/speed_block_vec_t0.0_vs_vanilla_20260614_010110.txt
+[2026-06-14 01:39:37] SPEED_BLOCK_TS=/root/autodl-tmp/results/speed_block_vec_t0.5_vs_vanilla_20260614_010110.txt
+[2026-06-14 01:39:37] SPEED_PROF_BLOCK_TS=/root/autodl-tmp/results/speed_prof_block_vec_t0.5_vs_vanilla_20260614_010110.txt
+[2026-06-14 01:39:37] Manifest: /root/autodl-tmp/results/vectorized_block_manifest_20260614_010110.txt
