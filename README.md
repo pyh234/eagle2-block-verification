@@ -22,18 +22,18 @@
 | Block v1 | 1.83x | 4.07 |
 | 向量化 Block | **2.05x** | **4.11** |
 
-verify 阶段占比由 Block v1 的 8.2% 降至向量化版本的 1.6%。需要注意：Block Verification 在温度大于 0 时并非严格分布无损，结果体现的是吞吐收益与采样分布偏移之间的折中。
+verify 阶段占比由 Block v1 的 8.2% 降至向量化版本的 1.6%。温度大于 0 时，Block Verification 会改变采样分布，因此加速效果不能脱离生成结果的变化单独看。
 
 ## 目录结构
 
 ```text
-mlsys_project/
-├─ overlay/                  # 复制到 EAGLE 仓库根目录的代码与脚本
-│  ├─ eagle/model/           # Block Verification 与 profiling 相关修改
-│  ├─ eagle/evaluation/      # Qwen2 评测、测速和分析脚本
-│  └─ scripts/               # 主实验、profiling 与温度消融脚本
+eagle2-block-verification/
+├─ eagle/                    # 修改的模型文件和新增的 Qwen2 评测工具
+│  ├─ model/
+│  └─ evaluation/
+├─ scripts/                  # 主实验、profiling 与温度消融脚本
 ├─ results/                  # 原始 JSONL、测速汇总、manifest 与分析输出
-├─ docs/                     # 课程项目报告
+├─ reports/                  # 课程项目报告
 ├─ LICENSE                   # 上游 EAGLE 的 Apache 2.0 许可声明
 └─ README.md
 ```
@@ -41,7 +41,7 @@ mlsys_project/
 ## 使用方式
 
 1. 按照 [SafeAILab/EAGLE](https://github.com/SafeAILab/EAGLE) 的说明准备 Linux、CUDA、Python 环境以及 Qwen2/EAGLE 模型。
-2. 将 `overlay/` 中的内容复制到 EAGLE 仓库根目录，使 `eagle/` 和 `scripts/` 与上游目录合并。
+2. 将本仓库的 `eagle/` 和 `scripts/` 复制到 EAGLE 仓库根目录，与上游同名目录合并。
 3. 根据本机环境修改脚本和评测代码中的模型路径、结果路径及 Conda 环境名。
 4. 运行主实验脚本：
 
@@ -51,13 +51,12 @@ mlsys_project/
 
    向量化验证、profiling 和温度消融分别对应 `run_vectorized_block_experiments.sh`、`run_profile_block_qwen2.sh` 和 `run_temp08_block_experiments.sh`。
 
-原实验在 AutoDL 环境中完成，因此代码和结果中保留了 `/root/autodl-tmp/...` 路径。它只是原运行目录，不包含密钥或账号信息；在其他机器运行时需要替换成实际路径。
+原实验在 AutoDL 环境中完成，因此代码和结果中保留了 `/root/autodl-tmp/...` 路径。在其他机器运行时需要替换成实际路径。
 
-更完整的方法、实验设置和结果讨论见 [项目报告](docs/block_verification_progress_report.md)。
+更完整的方法、实验设置和结果讨论见 [项目报告](reports/block_verification_report.md)。
 
 ## 来源与贡献说明
 
 本项目基于 SafeAI Lab 的开源项目 [EAGLE](https://github.com/SafeAILab/EAGLE) 开发。EAGLE 上游代码采用 Apache License 2.0，版权归 SafeAI Lab (SAIL) 所有；相关许可声明保留在本仓库的 `LICENSE` 中。
 
-本仓库展示的是课程项目中针对 EAGLE-2 Block Verification 完成的代码修改、Qwen2 评测工具、实验脚本、profiling、结果归档与分析，不代表完整 EAGLE 系统均由本项目作者原创。`overlay/` 中的文件应结合官方 EAGLE 仓库使用。
-
+本仓库展示的是课程项目中针对 EAGLE-2 Block Verification 完成的代码修改、Qwen2 评测工具、实验脚本、profiling、结果归档与分析，不代表完整 EAGLE 系统均由本项目作者原创。`eagle/` 和 `scripts/` 中的文件应结合官方 EAGLE 仓库使用。
